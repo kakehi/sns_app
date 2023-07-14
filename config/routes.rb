@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get 'topics/new', to: 'topics#new', as: 'new_topics'
   get 'topics/edit', to: 'topics#edit', as: 'edit_topics'
   
+  # 2-7 課題 2
+  get '/', to: 'posts#index', as: 'index_posts'
+  
 end
