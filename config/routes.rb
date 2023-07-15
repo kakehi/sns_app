@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # PostsController
   get 'posts/new', to: 'posts#new', as: 'new_post'
   
+  # この行を追加
+  post 'posts/new', to: 'posts#create', as: 'create_post'
+  
   # 課題 2
   # get 'XXX', to: 'AAA#bbb', as: 'bbb_AAA'
   
@@ -17,5 +20,12 @@ Rails.application.routes.draw do
   
   # 2-7 課題 2
   get '/', to: 'posts#index', as: 'index_posts'
+  
+  
+  #2-9 
+  #課題 3
+  post 'topics/new', to: 'topics#create', as: 'create_topics'
+  #課題 5
+  post 'topics/edit', to: 'topics#update', as: 'create_update'
   
 end

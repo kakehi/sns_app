@@ -8,8 +8,9 @@ class PostsController < ApplicationController
     render :new
   end
   
+  # このActionを追加
   def create
-    redirect_to 'posts/new'
+    redirect_to new_post_path # redirects to GET "/posts/new"
   end
   
 end
