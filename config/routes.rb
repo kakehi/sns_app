@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   # get 'XXX', to: 'AAA#bbb', as: 'bbb_AAA'
   
   # 課題 3
-  get 'topics/new', to: 'topics#new', as: 'new_topics'
-  get 'topics/edit', to: 'topics#edit', as: 'edit_topics'
+  get 'topics/new', to: 'topics#new', as: 'new_topic'
+  get 'topics/edit', to: 'topics#edit', as: 'edit_topic'
   
   # 2-7 課題 2
   get '/', to: 'posts#index', as: 'index_posts'
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   
   #2-9 
   #課題 3
-  post 'topics/new', to: 'topics#create', as: 'create_topics'
+  post 'topics/new', to: 'topics#create', as: 'create_topic'
   #課題 5
   post 'topics/edit', to: 'topics#update', as: 'create_update'
   
