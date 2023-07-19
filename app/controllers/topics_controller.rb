@@ -5,10 +5,6 @@ class TopicsController < ApplicationController
     render :new
   end
   
-  def create
-    redirect_to new_topic_path
-  end
-  
   # このActionを追加
   def create
     @topic = Topic.new(topic_params)
