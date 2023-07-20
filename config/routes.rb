@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'topics/edit', to: 'topics#edit', as: 'edit_topic'
   
   # 2-7 課題 2
-  get '/', to: 'posts#index', as: 'index_post'
+  get '/', to: 'posts#index', as: 'index_posts'
   
   
   #2-9 
@@ -30,6 +30,6 @@ Rails.application.routes.draw do
   
   #2-11
   #課題 1
-  get 'topics/', to: 'topics#index', as: 'index_topic'
+  get 'topics/', to: 'topics#index', as: 'index_topics'
   
 end
