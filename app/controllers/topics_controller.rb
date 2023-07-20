@@ -20,23 +20,35 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
 
     if @topic.save
-      redirect_to new_topic_path, notice: '登録しました'
+      redirect_to index_topics_path, notice: '登録しました'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
+  def edit
+    @topic = Topic.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    if @topic.update(topic_params)
+      redirect_to index_topics_path, notice: '更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+  
+  def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+    redirect_to index_topics_path, notice: '削除しました'
+  end
+  
   private
   def topic_params
     params.require(:topic).permit(:title)
-  end
-  
-  def edit
-    render :edit
-  end
-  
-  def update
-    redirect_to 'topics/edit'
   end
   
   
