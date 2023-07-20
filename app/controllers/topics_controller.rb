@@ -1,11 +1,21 @@
 class TopicsController < ApplicationController
+  before_action :authenticate_user!
   
   def new
     @topic = Topic.new
     render :new
   end
   
-  # このActionを追加
+  def index
+    @title = params[:title]
+    if @title.present?
+      @topics = Topic.where('title LIKE ?', "%#{@title}%")
+    else
+      @topics = Topic.all
+    end
+    render :index
+  end
+  
   def create
     @topic = Topic.new(topic_params)
 
